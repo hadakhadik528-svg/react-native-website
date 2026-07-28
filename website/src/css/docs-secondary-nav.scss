@@ -104,6 +104,18 @@ html.plugin-docs {
 [class*="dropdown"] {
   .dropdown__menu {
     border: 1px solid var(--ifm-table-border-color);
+    transform: translateY(4px);
+    overflow: visible;
+
+    // Make sure that menu does not close on hover, with dropdown portion detached via transform
+    &::before {
+      content: "";
+      position: absolute;
+      height: 5px;
+      top: -5px;
+      left: 0;
+      right: 0;
+    }
   }
 }
 

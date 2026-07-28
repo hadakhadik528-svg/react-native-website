@@ -11,7 +11,7 @@
   justify-content: space-between;
   gap: 1rem;
   height: var(--rn-subnav-height);
-  padding: 6px 1.5rem 0;
+  padding: 0 var(--ifm-spacing-horizontal);
 
   /* Pin directly below the main navbar so page content scrolls underneath. */
   position: sticky;
@@ -36,11 +36,10 @@
 
 /* Bottom keyline, inset from both edges so it comes in from the screen edges
    without lining up with the inner elements' padding. */
-.secondaryNav:after {
-  content: "";
+.secondaryNavDivider {
   position: absolute;
   right: 0.75rem;
-  bottom: -6px;
+  bottom: 0;
   left: 0.75rem;
   height: 1px;
   background-color: var(--ifm-toc-border-color);
@@ -152,6 +151,8 @@
 button.copyPageButton {
   border-radius: var(--ifm-global-radius);
   border-color: var(--ifm-color-gray-400);
+  padding: 7px 12px;
+  margin-bottom: 0;
 
   &:hover {
     background-color: var(--ifm-menu-color-background-hover) !important;
@@ -165,6 +166,7 @@ button.copyPageButton {
 
 .copyPageDropdown {
   border-color: var(--ifm-table-border-color) !important;
+  margin-top: -2px;
 
   button[class^="dropdownItem"] {
     border-bottom-color: var(--ifm-table-border-color) !important;
