@@ -108,7 +108,7 @@ html.plugin-docs {
     overflow: visible;
 
     // Make sure that menu does not close on hover, with dropdown portion detached via transform
-    &::before {
+    &:before {
       content: "";
       position: absolute;
       height: 5px;

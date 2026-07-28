@@ -166,7 +166,7 @@ button.copyPageButton {
 
 .copyPageDropdown {
   border-color: var(--ifm-table-border-color) !important;
-  margin-top: -2px;
+  margin-top: -3px;
 
   button[class^="dropdownItem"] {
     border-bottom-color: var(--ifm-table-border-color) !important;
