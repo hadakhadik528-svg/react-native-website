@@ -119,12 +119,13 @@ To temporarily revert to the previous types, add the `"react-native-legacy-deep-
 
 ### Faster, leaner Metro
 
- Metro is updated from 0.84 to 0.87 for this release.
- - Source map generation is now 2x faster, for faster RN DevTools loads.
- - Metro uses half as much memory, thanks to more efficient source map storage.
- - Stable support for TypeScript and ESM [config files](https://metrobundler.dev/docs/configuration/), e.g. `metro.config.mts`, dropped support for `.es6` extensions and YAML configs.
-  - New resolver features including package self-resolve.
- - Various fixes and improvements, see Metro’s [release notes](https://github.com/react/metro/releases).
+Metro is updated from 0.84 to 0.87 for this release.
+
+- Source map generation is now 2x faster, for faster RN DevTools loads.
+- Metro uses half as much memory, thanks to more efficient source map storage.
+- Stable support for TypeScript and ESM [config files](https://metrobundler.dev/docs/configuration/), e.g. `metro.config.mts`, dropped support for `.es6` extensions and YAML configs.
+- New resolver features including package self-resolve.
+- Various fixes and improvements, see Metro’s [release notes](https://github.com/react/metro/releases).
 
 ### Prebuilt iOS Core: the Clang VFS overlay is gone
 
@@ -168,7 +169,7 @@ Known limitations:
 - After a fresh clone, and in CI, run `npx react-native spm` once before building. It is the analog of `pod install`.
 - The commands, flags, and generated layout may change in later releases. Do not use it in production yet.
 
-See [RFC0994](https://github.com/chrfalch/discussions-and-proposals/blob/chrfalch/add-rfc-draft-for-spm/proposals/0994-swift-package-manager-support-for-react-native-ios-projects.md) for the full design and migration plan.
+See [RFC #0994](https://github.com/chrfalch/discussions-and-proposals/blob/chrfalch/add-rfc-draft-for-spm/proposals/0994-swift-package-manager-support-for-react-native-ios-projects.md) for the full design and migration plan.
 
 ### Android Gradle Plugin (AGP) v9
 
@@ -188,7 +189,6 @@ android.newDsl=false
 
 You can follow the progress on the ecosystem wide adoption of AGP 9 in [RFC #1006](https://github.com/react-native-community/discussions-and-proposals/pull/1006)
 
-
 ## Breaking Changes
 
 ### Minimum toolchain requirements
@@ -200,7 +200,7 @@ You can follow the progress on the ecosystem wide adoption of AGP 9 in [RFC #100
 
 ### API removals
 
-- The **Strict TypeScript API** is now the default (see Highlights) — deep imports into `Libraries/` are inaccessible unless opting back via `"react-native-legacy-deep-imports"`  ([details](/docs/strict-typescript-api#opting-out-since-087).
+- The **Strict TypeScript API** is now the default (see Highlights) — deep imports into `Libraries/` are inaccessible unless opting back via `"react-native-legacy-deep-imports"` ([details](/docs/strict-typescript-api#opting-out-since-087)).
 - Deep imports to `src/private/` are removed.
 - Deep imports to `src/private/` are removed.
 - The deprecated `*Properties` type aliases (e.g. `ViewProperties`) are inaccessible under the Strict API — use the `*Props` equivalents ([details](/docs/strict-typescript-api#removal-of-some-deprecated-types)).
@@ -233,7 +233,6 @@ The following APIs are deprecated and due for removal in a future release:
 - **Android**: `DrawerLayoutAndroid` → use `react-native-drawer-layout`; `UIBlock` / `UIManagerModule.addUIBlock` / `prependUIBlock` → use `UIManagerListener` or View Commands; the new-arch-flag constructors on `DefaultReactActivityDelegate`.
 - **iOS**: `TimingModule`; `RCTTurboModuleEnabled()` / `RCTEnableTurboModule()`.
 
-
 ## Acknowledgements
 
 React Native 0.87 contains 265 commits from 74 contributors. Thanks for all your hard work!
@@ -245,7 +244,6 @@ We want to send a special thank you to those community members that shipped sign
 - [Rob Hogan](https://github.com/robhogan) for upgrading Metro
 - [Hur Ali](https://github.com/hurali97) for AGP V9 adoption
 - [Christoph Purrer](https://github.com/christophpurrer) for legacy architecture cleanup
-
 
 ## Upgrade to 0.87
 
