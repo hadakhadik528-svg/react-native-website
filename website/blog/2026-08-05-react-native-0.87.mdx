@@ -169,7 +169,7 @@ Known limitations:
 - After a fresh clone, and in CI, run `npx react-native spm` once before building. It is the analog of `pod install`.
 - The commands, flags, and generated layout may change in later releases. Do not use it in production yet.
 
-See [RFC #0994](https://github.com/chrfalch/discussions-and-proposals/blob/chrfalch/add-rfc-draft-for-spm/proposals/0994-swift-package-manager-support-for-react-native-ios-projects.md) for the full design and migration plan.
+See [RFC #0994](https://github.com/react-native-community/discussions-and-proposals/pull/994) for the full design and migration plan.
 
 ### Android Gradle Plugin (AGP) v9
 
@@ -201,7 +201,6 @@ You can follow the progress on the ecosystem wide adoption of AGP 9 in [RFC #100
 ### API removals
 
 - The **Strict TypeScript API** is now the default (see Highlights) — deep imports into `Libraries/` are inaccessible unless opting back via `"react-native-legacy-deep-imports"` ([details](/docs/strict-typescript-api#opting-out-since-087)).
-- Deep imports to `src/private/` are removed.
 - Deep imports to `src/private/` are removed.
 - The deprecated `*Properties` type aliases (e.g. `ViewProperties`) are inaccessible under the Strict API — use the `*Props` equivalents ([details](/docs/strict-typescript-api#removal-of-some-deprecated-types)).
 - Support for YAML Metro config files, and JavaScript config files with `.es6` extensions, has been removed.
