@@ -15,7 +15,6 @@ This release makes the **Strict TypeScript API** the default JavaScript API, upd
 
 - [Strict TypeScript API by default](/blog/2026/08/10/react-native-0.87#strict-typescript-api-by-default)
 - [Faster, leaner Metro](/blog/2026/08/10/react-native-0.87#faster-leaner-metro)
-- [Prebuilt iOS Core: Improved modularization of React Native's XCFrameworks](/blog/2026/08/10/react-native-0.87#prebuilt-ios-core-the-clang-vfs-overlay-is-gone)
 - [Experimental Swift Package Manager support for iOS](/blog/2026/08/10/react-native-0.87#experimental-swift-package-manager-support-for-ios)
 - [Android Gradle Plugin (AGP) v9](/blog/2026/08/10/react-native-0.87#android-gradle-plugin-agp-v9)
 
@@ -126,15 +125,6 @@ Metro is updated from 0.84 to 0.87 for this release.
 - Stable support for TypeScript and ESM [config files](https://metrobundler.dev/docs/configuration/), e.g. `metro.config.mts`, dropped support for `.es6` extensions and YAML configs.
 - New resolver features including package self-resolve.
 - Various fixes and improvements, see Metro’s [release notes](https://github.com/react/metro/releases).
-
-### Prebuilt iOS Core: the Clang VFS overlay is gone
-
-0.87 improves modularization of the prebuilt XCFrameworks. Headers now resolve through standard framework and header search path mechanics, and every namespace has exactly one physical home. Four XCFrameworks carry the header surface:
-
-- `React.xcframework`
-- `ReactNativeHeaders.xcframework` (new, headers only)
-- `ReactNativeDependencies.xcframework`
-- `ReactNativeDependenciesHeaders.xcframework` (new, headers only)
 
 ### Experimental Swift Package Manager support for iOS
 
@@ -249,7 +239,7 @@ React Native 0.87 contains 265 commits from 74 contributors. Thanks for all your
 We want to send a special thank you to those community members that shipped significant contributions in this release.
 
 - [Alex Hunt](https://github.com/huntie) for work on the Strict TypeScript API
-- [Christian Falch](https://github.com/chrfalch) for adding the support for Swift Package Manager and work on Prebuilt iOS Core
+- [Christian Falch](https://github.com/chrfalch) for adding the support for Swift Package Manager
 - [Rob Hogan](https://github.com/robhogan) for improvements to Metro
 - [Hur Ali](https://github.com/hurali97) for AGP V9 adoption
 - [Christoph Purrer](https://github.com/christophpurrer) for legacy architecture cleanup
