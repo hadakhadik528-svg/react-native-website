@@ -144,7 +144,7 @@ Metro is updated from 0.84 to 0.87 for this release.
 - `ReactNativeDependencies.xcframework`
 - `ReactNativeDependenciesHeaders.xcframework` (new, headers only)
 
-### Swift Package Manager support for iOS (Preview)
+### Experimental Swift Package Manager support for iOS (Preview)
 
 React Native 0.87 adds preview support for Swift Package Manager as an alternative to CocoaPods on iOS. It is opt-in and additive; CocoaPods remains the default and the supported path. The SwiftPM path consumes the same prebuilt XCFrameworks React Native already publishes. Setup needs only Xcode — no Ruby, no Bundler, no CocoaPods.
 
@@ -167,11 +167,13 @@ Known limitations:
 - The commands, flags, and generated layout may change in later releases. Do not use it in production yet.
 
 See [RFC #0994](https://github.com/react-native-community/discussions-and-proposals/pull/994) for the full design and migration plan.
+
 #### Headers Breaking Changes
 
 To properly support SwiftPM integration with React Native, we had to rethink how we ship the precompiled binaries of React Native itself. This is needed because SwiftPM is much stricter than Cocoapods when it comes to XCFramework structure and headers location.
 
 You might notice a couple of new XCFrameworks:
+
 - `ReactNativeHeaders.xcframework`
 - `ReactNativeDependenciesHeaders.xcframework`
 
@@ -181,6 +183,8 @@ Header content is byte-identical to the source pods. The one consumer-facing cha
 ```diff
 - #import <RCTAppDelegate.h>
 + #import <React/RCTAppDelegate.h>
+```
+
 ### Android Gradle Plugin (AGP) v9
 
 This is the first release of React Native that adds support for AGP 9.
