@@ -146,7 +146,9 @@ Metro is updated from 0.84 to 0.87 for this release.
 
 ### Experimental Swift Package Manager support for iOS
 
-React Native 0.87 adds preview support for Swift Package Manager as an alternative to CocoaPods on iOS. It is opt-in and additive; CocoaPods remains the default and the supported path. The SwiftPM path consumes the same prebuilt XCFrameworks React Native already publishes. Setup needs only Xcode — no Ruby, no Bundler, no CocoaPods.
+React Native 0.87 adds experimental support for Swift Package Manager as an alternative to CocoaPods on iOS. It is opt-in and additive; CocoaPods remains the default and the supported path. The SwiftPM path consumes the same prebuilt XCFrameworks React Native already publishes.
+
+This new setup only needs Xcode — no Ruby, no Bundler, no CocoaPods.
 
 To try it in an existing/new app:
 
@@ -158,7 +160,9 @@ npx react-native spm -- deintegrate
 
 The command injects Swift package references into your existing `.xcodeproj` instead of replacing the project. Your signing, capabilities, and build phases stay untouched. `npx react-native spm deinit` reverses the change exactly.
 
+::: important
 You only run that command once. After the first setup, you do not run it again when your dependencies change. Install or remove a native package, then build. The project detects the change and re-runs autolinking for you. There is no `pod install` step to remember after every dependency change.
+:::
 
 Known limitations:
 
