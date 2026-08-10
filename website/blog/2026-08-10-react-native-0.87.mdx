@@ -167,7 +167,20 @@ Known limitations:
 - The commands, flags, and generated layout may change in later releases. Do not use it in production yet.
 
 See [RFC #0994](https://github.com/react-native-community/discussions-and-proposals/pull/994) for the full design and migration plan.
+#### Headers Breaking Changes
 
+To properly support SwiftPM integration with React Native, we had to rethink how we ship the precompiled binaries of React Native itself. This is needed because SwiftPM is much stricter than Cocoapods when it comes to XCFramework structure and headers location.
+
+You might notice a couple of new XCFrameworks:
+- `ReactNativeHeaders.xcframework`
+- `ReactNativeDependenciesHeaders.xcframework`
+
+These are Headers only frameworks and thanks to this change headers now resolve through standard framework and header search path mechanics, and every namespace has exactly one physical home.
+Header content is byte-identical to the source pods. The one consumer-facing change is bare-form angle includes — if you import a React Native header without its namespace, add it:
+
+```diff
+- #import <RCTAppDelegate.h>
++ #import <React/RCTAppDelegate.h>
 ### Android Gradle Plugin (AGP) v9
 
 This is the first release of React Native that adds support for AGP 9.
