@@ -137,23 +137,12 @@ Metro is updated from 0.84 to 0.87 for this release.
 
 ### Prebuilt iOS Core: the Clang VFS overlay is gone
 
-When React Native Core started shipping as a prebuilt XCframework, its headers were laid out in CocoaPods-style namespaced folders instead of standard framework conventions. To make them importable, the build generated a Clang VFS overlay (`React-VFS.yaml`), re-resolved it per slice at `pod install` time, and injected `-ivfsoverlay` flags into every Objective-C, C++, and Swift compile — including third-party pod targets.
-
-0.87 removes the overlay. Headers now resolve through standard framework and header search path mechanics, and every namespace has exactly one physical home. Four XCFrameworks carry the header surface:
+0.87 improves modularization of the prebuilt XCFrameworks. Headers now resolve through standard framework and header search path mechanics, and every namespace has exactly one physical home. Four XCFrameworks carry the header surface:
 
 - `React.xcframework`
 - `ReactNativeHeaders.xcframework` (new, headers only)
 - `ReactNativeDependencies.xcframework`
 - `ReactNativeDependenciesHeaders.xcframework` (new, headers only)
-
-Header content is byte-identical to the source pods. The one consumer-facing change is bare-form angle includes — if you import a React Native header without its namespace, add it:
-
-```diff
-- #import <RCTAppDelegate.h>
-+ #import <React/RCTAppDelegate.h>
-```
-
-Source builds are unaffected.
 
 ### Swift Package Manager support for iOS (Preview)
 
